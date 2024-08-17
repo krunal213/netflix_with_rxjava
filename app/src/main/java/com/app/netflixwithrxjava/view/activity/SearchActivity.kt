@@ -1,10 +1,11 @@
-package com.app.netflixwithrxjava
+package com.app.netflixwithrxjava.view.activity
 
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.appcompat.widget.Toolbar
+import com.app.netflixwithrxjava.R
 
 class SearchActivity : AppCompatActivity() {
 

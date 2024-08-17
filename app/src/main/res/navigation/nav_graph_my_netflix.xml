@@ -7,13 +7,13 @@
 
     <fragment
         android:id="@+id/fragmentMyNetflixHome"
-        android:name="com.app.netflixwithrxjava.MyNetflixFragment"
+        android:name="com.app.netflixwithrxjava.view.fragment.MyNetflixFragment"
         tools:layout="@layout/fragment_my_netflix"
         android:label="@string/string_menu_my_netflix"/>
 
     <fragment
         android:id="@+id/fragmentDownloads"
-        android:name="com.app.netflixwithrxjava.DownloadsFragment"
+        android:name="com.app.netflixwithrxjava.view.fragment.DownloadsFragment"
         tools:layout="@layout/fragment_downloads"
         android:label="@string/string_downloads"/>
 
