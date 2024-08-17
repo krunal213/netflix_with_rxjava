@@ -1,8 +1,10 @@
-package com.app.netflixwithrxjava
+package com.app.netflixwithrxjava.view.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import com.app.netflixwithrxjava.R
+import com.app.netflixwithrxjava.view.fragment.DownloadSearchMenuFragment
 
 class HomeFragment : DownloadSearchMenuFragment() {
 

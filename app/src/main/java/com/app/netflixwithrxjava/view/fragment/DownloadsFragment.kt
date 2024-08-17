@@ -1,9 +1,10 @@
-package com.app.netflixwithrxjava
+package com.app.netflixwithrxjava.view.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.app.netflixwithrxjava.R
 
 class DownloadsFragment : Fragment() {
 

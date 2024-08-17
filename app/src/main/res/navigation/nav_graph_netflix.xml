@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/fragmentHome"
-        android:name="com.app.netflixwithrxjava.HomeFragment"
+        android:name="com.app.netflixwithrxjava.view.fragment.HomeFragment"
         tools:layout="@layout/fragment_home"
         android:label=""/>
 
     <fragment
         android:id="@+id/fragmentGames"
-        android:name="com.app.netflixwithrxjava.GamesFragment"
+        android:name="com.app.netflixwithrxjava.view.fragment.GamesFragment"
         tools:layout="@layout/fragment_game"
         android:label="@string/string_menu_games"/>
 
     <fragment
         android:id="@+id/fragmentNewAndHot"
-        android:name="com.app.netflixwithrxjava.NewAndHotFragment"
+        android:name="com.app.netflixwithrxjava.view.fragment.NewAndHotFragment"
         tools:layout="@layout/fragment_new_and_hot"
         android:label="@string/string_menu_new_and_hot"/>
 
@@ -28,12 +28,12 @@
 
     <activity
         android:id="@+id/activitySearch"
-        android:name="com.app.netflixwithrxjava.SearchActivity"
+        android:name="com.app.netflixwithrxjava.view.activity.SearchActivity"
         tools:layout="@layout/activity_search"/>
 
     <dialog
         android:id="@+id/myNetflixMenuBottomSheetDialogFragment"
-        android:name="com.app.netflixwithrxjava.MyNetflixMenuBottomSheetDialogFragment"
+        android:name="com.app.netflixwithrxjava.view.fragment.MyNetflixMenuBottomSheetDialogFragment"
         android:label="MyNetflixMenuBottomSheetDialogFragment" />
 
 </navigation>
