@@ -17,7 +17,7 @@ class GamesFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ) = inflater.inflate(R.layout.fragment_game,container,false)
+    ) = inflater.inflate(R.layout.fragment_game, container, false)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -29,10 +29,9 @@ class GamesFragment : Fragment() {
         super.onCreateOptionsMenu(menu, inflater)
     }
 
-    override fun onOptionsItemSelected(item: MenuItem) =
-        NavigationUI.onNavDestinationSelected(
-            item,
-            findNavController()
-        ) || super.onOptionsItemSelected(item)
+    override fun onOptionsItemSelected(item: MenuItem) = NavigationUI.onNavDestinationSelected(
+        item,
+        findNavController()
+    ) || super.onOptionsItemSelected(item)
 
 }

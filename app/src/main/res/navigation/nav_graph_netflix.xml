@@ -36,4 +36,10 @@
         android:name="com.app.netflixwithrxjava.MyNetflixMenuBottomSheetDialogFragment"
         android:label="MyNetflixMenuBottomSheetDialogFragment" />
 
+    <fragment
+        android:id="@+id/fragmentTest"
+        android:name="com.app.netflixwithrxjava.NewAndHotFragment"
+        tools:layout="@layout/fragment_new_and_hot"
+        android:label="Test"/>
+
 </navigation>

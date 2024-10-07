@@ -9,12 +9,30 @@
         android:id="@+id/fragmentMyNetflixHome"
         android:name="com.app.netflixwithrxjava.MyNetflixFragment"
         tools:layout="@layout/fragment_my_netflix"
-        android:label="@string/string_menu_my_netflix"/>
+        android:label="@string/string_menu_my_netflix">
+
+        <action
+            android:id="@+id/action_fragmentMyNetflixHome_to_fragmentDownloads"
+            app:destination="@id/fragmentDownloads"/>
+
+    </fragment>
 
     <fragment
         android:id="@+id/fragmentDownloads"
         android:name="com.app.netflixwithrxjava.DownloadsFragment"
         tools:layout="@layout/fragment_downloads"
-        android:label="@string/string_downloads"/>
+        android:label="@string/string_downloads">
+
+        <deepLink
+            android:id="@+id/deepLinkToSecondary"
+            app:uri="example://secondary" />
+
+        <action
+            android:id="@+id/action_fragmentDownloads_to_fragmentMyNetflixHome"
+            app:destination="@id/fragmentMyNetflixHome"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/fragmentDownloads"/>
+
+    </fragment>
 
 </navigation>
