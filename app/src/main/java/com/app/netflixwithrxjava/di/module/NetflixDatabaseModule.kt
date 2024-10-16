@@ -2,7 +2,7 @@ package com.app.netflixwithrxjava.di.module
 
 import android.app.Application
 import androidx.room.Room
-import com.app.netflixwithrxjava.repository.datasource.database.NetflixRoomDatabase
+//import com.app.netflixwithrxjava.repository.datasource.database.NetflixRoomDatabase
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -10,7 +10,7 @@ import javax.inject.Singleton
 @Module
 object NetflixDatabaseModule {
 
-    @Provides
+    /*@Provides
     @Singleton
     fun provideNetflixRoomDatabase(application: Application) = Room
         .databaseBuilder(
@@ -22,6 +22,6 @@ object NetflixDatabaseModule {
     @Provides
     @Singleton
     fun provideNetflixDao(netflixRoomDatabase: NetflixRoomDatabase) =
-        netflixRoomDatabase.netflixDao()
+        netflixRoomDatabase.netflixDao()*/
 
 }

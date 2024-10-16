@@ -1,4 +1,4 @@
-package com.app.netflixwithrxjava.repository.datasource.database
+/*package com.app.netflixwithrxjava.repository.datasource.database
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
@@ -8,4 +8,4 @@ abstract class NetflixRoomDatabase : RoomDatabase() {
 
     abstract fun netflixDao() : NetflixDao
 
-}
+}*/
