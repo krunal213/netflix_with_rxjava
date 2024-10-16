@@ -1,15 +1,15 @@
-package com.app.netflixwithrxjava
+package com.app.netflixwithrxjava.view.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.OnBackPressedCallback
 import androidx.activity.addCallback
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
+import com.app.netflixwithrxjava.R
 
 class DownloadsFragment : Fragment() {
 

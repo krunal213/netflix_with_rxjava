@@ -17,6 +17,11 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        kapt {
+            arguments {
+                arg("room.schemaLocation", "$projectDir/schemas")
+            }
+        }
     }
 
     buildTypes {
@@ -49,4 +54,11 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
+    implementation(libs.dagger)
+    kapt(libs.dagger.compiler)
+    implementation(libs.room.runtime)
+    kapt(libs.room.compiler)
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    
 }
