@@ -1,4 +1,4 @@
-package com.app.netflixwithrxjava
+package com.app.netflixwithrxjava.view.fragment
 
 import android.net.Uri
 import android.os.Bundle
@@ -10,6 +10,7 @@ import androidx.annotation.CallSuper
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
+import com.app.netflixwithrxjava.R
 
 abstract class DownloadSearchMenuFragment : Fragment() {
 
