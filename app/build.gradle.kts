@@ -60,5 +60,6 @@ dependencies {
     kapt(libs.room.compiler)
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
-    
+    implementation(libs.glide)
+
 }

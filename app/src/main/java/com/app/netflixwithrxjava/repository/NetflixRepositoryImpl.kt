@@ -6,7 +6,7 @@ import javax.inject.Inject
 
 class NetflixRepositoryImpl @Inject constructor(
     val netflixNetworkDataSource: NetflixNetworkDataSource,
-    val netflixDatabaseDataSource: NetflixDatabaseDataSource
+    /*val netflixDatabaseDataSource: NetflixDatabaseDataSource*/
 ) : NetflixRepository {
 
 }
