@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.appcompat.widget.Toolbar
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.ViewCompat
@@ -11,19 +12,21 @@ import androidx.core.view.WindowCompat
 import androidx.core.view.updateLayoutParams
 import androidx.core.view.updatePadding
 import androidx.navigation.NavController
+import androidx.navigation.NavDestination
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import com.app.netflixwithrxjava.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class NetflixMainActivity : AppCompatActivity() {
+class NetflixMainActivity : AppCompatActivity(), NavController.OnDestinationChangedListener {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
         setContentView(R.layout.activity_main_netflix)
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation_view)
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
@@ -45,11 +48,11 @@ class NetflixMainActivity : AppCompatActivity() {
         ViewCompat.setOnApplyWindowInsetsListener(main) { view, windowInsets ->
             toolbar.setMarginTop(windowInsets.systemWindowInsetTop)
             fragment.updatePadding(
-                top = (toolbar.layoutParams.height + windowInsets.systemWindowInsetTop),
-                bottom = (bottomNavigationView.layoutParams.height + windowInsets.systemWindowInsetBottom)
+                top = (toolbar.layoutParams.height + windowInsets.systemWindowInsetTop)
             )
             windowInsets
         }
+        navController.addOnDestinationChangedListener(this)
     }
 
     override fun onSupportNavigateUp(): Boolean {
@@ -58,6 +61,21 @@ class NetflixMainActivity : AppCompatActivity() {
 
     private fun View.setMarginTop(value: Int) = updateLayoutParams<ViewGroup.MarginLayoutParams> {
         topMargin = value
+    }
+
+    override fun onDestinationChanged(
+        controller: NavController,
+        destination: NavDestination,
+        arguments: Bundle?
+    ) {
+        when (destination.id) {
+            R.id.fragmentHome -> {
+                supportActionBar?.setIcon(R.drawable.ic_netflix)
+            }
+            else->{
+                supportActionBar?.setIcon(null)
+            }
+        }
     }
 
 }

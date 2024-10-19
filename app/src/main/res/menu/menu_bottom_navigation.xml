@@ -3,20 +3,22 @@
 
     <item
         android:id="@+id/fragmentHome"
-        android:title="@string/string_menu_home"
-        android:icon="@drawable/selector_home" />
+        android:icon="@drawable/selector_home"
+        android:title="@string/string_menu_home" />
 
     <item
         android:id="@+id/fragmentGames"
-        android:title="@string/string_menu_games"
-        android:icon="@drawable/selector_games" />
+        android:icon="@drawable/selector_games"
+        android:title="@string/string_menu_games" />
 
-    <item android:id="@+id/fragmentNewAndHot"
-        android:title="@string/string_menu_new_and_hot"
-        android:icon="@drawable/selector_new_and_hot" />
+    <item
+        android:id="@+id/fragmentNewAndHot"
+        android:icon="@drawable/selector_new_and_hot"
+        android:title="@string/string_menu_new_and_hot" />
 
-    <item android:id="@+id/nav_graph_my_netflix"
-        android:title="@string/string_menu_my_netflix"
-        android:icon="@drawable/selector_my_netflix" />
+    <item
+        android:id="@+id/nav_graph_my_netflix"
+        android:icon="@drawable/selector_my_netflix"
+        android:title="@string/string_menu_my_netflix" />
 
 </menu>

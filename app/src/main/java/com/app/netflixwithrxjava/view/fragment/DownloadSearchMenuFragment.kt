@@ -34,8 +34,6 @@ abstract class DownloadSearchMenuFragment : Fragment() {
                 .navigate(
                     Uri.parse("example://secondary"),
                     NavOptions.Builder()
-                        .setLaunchSingleTop(true)
-                        .setRestoreState(true)
                         .setPopUpTo(
                             findNavController().graph.findStartDestination().id,
                             inclusive = false,
