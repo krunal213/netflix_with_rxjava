@@ -20,6 +20,7 @@ class HomeFragment : DownloadSearchMenuFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setHasOptionsMenu(true)
         view.findViewById<RecyclerView>(R.id.moviesRecyclerView).apply {
             layoutManager = GridLayoutManager(context, 2)
             adapter = MoviesAdapter(getTestData())

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_get_started"
+    app:startDestination="@id/getStartedFragment">
+
+    <fragment
+        android:id="@+id/getStartedFragment"
+        android:name="com.app.netflixwithrxjava.view.fragment.GetStartedFragment"
+        android:label=""
+        tools:layout="@layout/fragment_getting_started">
+        <action
+            android:id="@+id/action_getStartedFragment_to_emailVerificationFragment"
+            app:destination="@id/emailVerificationBottomSheetDialogFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/createAccountFragment"
+        android:name="com.app.netflixwithrxjava.view.fragment.CreateAccountFragment"
+        android:label=""
+        tools:layout="@layout/fragment_create_account" />
+
+    <action
+        android:id="@+id/action_createFragment"
+        app:destination="@id/createAccountFragment"
+        app:enterAnim="@anim/slide_from_right"
+        app:exitAnim="@anim/slide_to_left"
+        app:popEnterAnim="@anim/pop_slide_to_right"
+        app:popExitAnim="@anim/pop_slide_from_left" />
+
+    <dialog
+        android:id="@+id/emailVerificationBottomSheetDialogFragment"
+        android:name="com.app.netflixwithrxjava.view.fragment.EmailVerificationBottomSheetDialogFragment"
+        android:label="Full Screen Bottom Sheet"
+        tools:layout="@layout/bottom_sheet_dialog_fragment_email_verification" />
+
+    <action
+        android:id="@+id/action_loginFragment"
+        app:destination="@id/loginFragment"
+        app:enterAnim="@anim/slide_from_right"
+        app:exitAnim="@anim/slide_to_left"
+        app:popEnterAnim="@anim/pop_slide_to_right"
+        app:popExitAnim="@anim/pop_slide_from_left" />
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.app.netflixwithrxjava.view.fragment.LoginFragment"
+        android:label=""
+        tools:layout="@layout/fragment_login" />
+
+</navigation>

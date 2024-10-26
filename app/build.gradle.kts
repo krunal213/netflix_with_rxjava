@@ -61,5 +61,8 @@ dependencies {
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
     implementation(libs.glide)
+    implementation("androidx.preference:preference-ktx:1.2.0")
+    implementation("com.airbnb.android:lottie:6.5.2")
+    implementation("it.xabaras.android:viewpagerindicator:2.0")
 
 }
