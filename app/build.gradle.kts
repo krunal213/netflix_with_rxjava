@@ -64,5 +64,8 @@ dependencies {
     implementation("androidx.preference:preference-ktx:1.2.0")
     implementation("com.airbnb.android:lottie:6.5.2")
     implementation("it.xabaras.android:viewpagerindicator:2.0")
+    implementation("com.github.cachapa:ExpandableLayout:2.9.2")
+
+    //compile 'com.github.aakira:expandable-layout:1.6.0@aar'
 
 }

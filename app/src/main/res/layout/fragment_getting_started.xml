@@ -16,7 +16,8 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@id/button"
         android:layout_marginBottom="12dp"
-        app:itemSelectedColor="#ff0000"
+        app:itemSelectedColor="#C60A0A"
+        app:itemUnselectedColor="#938E8E"
         app:itemDividerWidth="12dp"
         app:itemRadius="5dp"/>
 
@@ -24,7 +25,10 @@
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:text="Get Started"
         app:layout_constraintBottom_toBottomOf="parent" />
 

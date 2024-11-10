@@ -1,18 +1,12 @@
 package com.app.netflixwithrxjava.view.activity
 
 import android.os.Bundle
-import android.view.View
-import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.appcompat.widget.Toolbar
-import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.core.view.ViewCompat
-import androidx.core.view.updateLayoutParams
-import androidx.core.view.updatePadding
 import androidx.navigation.NavController
 import androidx.navigation.NavDestination
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import com.app.netflixwithrxjava.R
@@ -25,6 +19,7 @@ class GetStartedActivity : AppCompatActivity(), NavController.OnDestinationChang
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
         setContentView(R.layout.activity_get_started)
         toolbar = findViewById<Toolbar>(R.id.toolbar)
         navController = findNavController(R.id.fragment_container)
@@ -50,7 +45,8 @@ class GetStartedActivity : AppCompatActivity(), NavController.OnDestinationChang
     ) {
         when (destination.id) {
             R.id.getStartedFragment -> {
-                supportActionBar?.setIcon(R.drawable.ic_netflix)
+                toolbar.setNavigationIcon(R.drawable.ic_netflix_v3)
+                supportActionBar?.setIcon(null)
             }
             R.id.createAccountFragment,R.id.loginFragment->{
                 supportActionBar?.setIcon(R.drawable.ic_netflix_full)

@@ -11,6 +11,7 @@ import android.widget.Button
 import androidx.fragment.app.Fragment
 import com.app.netflixwithrxjava.R
 import com.app.netflixwithrxjava.view.activity.NetflixMainActivity
+import com.google.android.material.textfield.TextInputLayout
 
 class LoginFragment : Fragment(), View.OnClickListener {
 
@@ -24,6 +25,8 @@ class LoginFragment : Fragment(), View.OnClickListener {
         super.onViewCreated(view, savedInstanceState)
         setHasOptionsMenu(true)
         view.findViewById<Button>(R.id.button_sign_in).setOnClickListener(this)
+        val textInputLayout = view.findViewById<TextInputLayout>(R.id.text_input_layout_password)
+        println(textInputLayout)
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

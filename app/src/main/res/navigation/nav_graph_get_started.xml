@@ -49,4 +49,21 @@
         android:label=""
         tools:layout="@layout/fragment_login" />
 
+    <dialog
+        android:id="@+id/faqBottomSheetDialogFragment"
+        android:name="com.app.netflixwithrxjava.view.fragment.FAQBottomsheetDialogFragment"
+        android:label="Full Screen Bottom Sheet"
+        tools:layout="@layout/bottom_sheet_dialog_fragment_faq" />
+
+    <activity
+        android:id="@+id/helpActivity"
+        android:name="com.app.netflixwithrxjava.view.activity.HelpActivity"
+        android:label=""
+        tools:layout="@layout/activity_help"/>
+
+    <activity
+        android:id="@+id/menuPrivacy"
+        app:action="android.intent.action.VIEW"
+        app:data="https://help.netflix.com/legal/privacy?netflixsource=android&amp;fromApp=true"/>
+
 </navigation>

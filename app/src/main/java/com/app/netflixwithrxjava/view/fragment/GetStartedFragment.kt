@@ -4,11 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.NavigationUI
 import androidx.viewpager2.widget.ViewPager2
 import com.app.netflixwithrxjava.R
 import it.xabaras.android.viewpagerindicator.widget.ViewPagerIndicator2
@@ -42,6 +44,25 @@ class GetStartedFragment : Fragment(), View.OnClickListener {
             R.id.button->{
                 findNavController().navigate(R.id.action_getStartedFragment_to_emailVerificationFragment)
             }
+        }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem) : Boolean{
+        if(item.itemId==R.id.action_loginFragment){
+            findNavController().navigate(R.id.action_loginFragment)
+            return super.onOptionsItemSelected(item)
+        }else{
+            val onOptionsItemSelected = NavigationUI.onNavDestinationSelected(
+                item,
+                findNavController()
+            ) || super.onOptionsItemSelected(item)
+            if (item.itemId==R.id.helpActivity){
+                requireActivity().overridePendingTransition(
+                    R.anim.animate_in_out_enter,
+                    R.anim.animate_in_out_exit
+                )
+            }
+            return onOptionsItemSelected
         }
     }
 }

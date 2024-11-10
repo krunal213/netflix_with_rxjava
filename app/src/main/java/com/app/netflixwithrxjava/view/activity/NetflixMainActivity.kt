@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.appcompat.widget.Toolbar
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.ViewCompat
@@ -22,12 +23,14 @@ class NetflixMainActivity : AppCompatActivity(), NavController.OnDestinationChan
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var navController: NavController
+    private lateinit var toolbar: Toolbar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
         setContentView(R.layout.activity_netflix_main)
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation_view)
-        val toolbar = findViewById<Toolbar>(R.id.toolbar)
+        toolbar = findViewById(R.id.toolbar)
         navController = findNavController(R.id.fragment_container)
         appBarConfiguration = AppBarConfiguration(
             setOf(
@@ -68,10 +71,11 @@ class NetflixMainActivity : AppCompatActivity(), NavController.OnDestinationChan
     ) {
         when (destination.id) {
             R.id.fragmentHome -> {
-                supportActionBar?.setIcon(R.drawable.ic_netflix)
+                //supportActionBar?.setLogo(R.drawable.ic_netflix)
+                toolbar.setNavigationIcon(R.drawable.ic_netflix_v3)
             }
             else->{
-                supportActionBar?.setIcon(null)
+                toolbar.setNavigationIcon(null)
             }
         }
     }
