@@ -1,0 +1,25 @@
+<resources>
+
+    <style name="Theme.NetflixWithRxJava" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="fontFamily">@font/netflix_sans_regular</item>
+        <item name="colorPrimary">@android:color/black</item>
+        <item name="android:colorControlNormal">@android:color/white</item>
+        <item name="colorOnPrimary">@android:color/white</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/black</item>
+    </style>
+
+    <!--
+
+    <style name="Theme.NetflixWithRxJava.White" parent="Theme.NetflixWithRxJava">
+        <item name="android:colorControlNormal">@android:color/black</item>
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="android:statusBarColor">@android:color/black</item>
+    </style>
+
+    <style name="BoldMenuText" parent="TextAppearance.AppCompat.Widget.ActionBar.Menu">
+        <item name="android:textStyle">bold</item>
+    </style>-->
+
+</resources>

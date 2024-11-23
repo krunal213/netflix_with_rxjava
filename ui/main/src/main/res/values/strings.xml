@@ -1,0 +1,7 @@
+<resources>
+    <string name="string_menu_home">Home</string>
+    <string name="string_menu_games">Games</string>
+    <string name="string_menu_new_and_hot"><![CDATA[New & Hot]]></string>
+    <string name="string_menu_my_netflix">My Netflix</string>
+    <string name="string_downloads">Downloads</string>
+</resources>

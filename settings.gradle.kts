@@ -23,4 +23,10 @@ dependencyResolutionManagement {
 
 rootProject.name = "NetflixWithRxJava"
 include(":app")
- 
+include(":ui:splash")
+include(":ui:getstarted")
+include(":ui:help")
+include(":ui:main")
+include(":ui:search")
+include(":ui:settings")
+include(":android_resource")

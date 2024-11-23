@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_netflix"
+    app:startDestination="@id/fragmentHome">
+
+    <fragment
+        android:id="@+id/fragmentHome"
+        android:name="com.app.main.fragment.HomeFragment"
+        tools:layout="@layout/fragment_home"
+        android:label="" />
+
+    <fragment
+        android:id="@+id/fragmentGames"
+        android:name="com.app.main.fragment.GamesFragment"
+        tools:layout="@layout/fragment_game"
+        android:label="@string/string_menu_games"/>
+
+    <fragment
+        android:id="@+id/fragmentNewAndHot"
+        android:name="com.app.main.fragment.NewAndHotFragment"
+        tools:layout="@layout/fragment_new_and_hot"
+        android:label="@string/string_menu_new_and_hot"/>
+
+    <include
+        app:graph="@navigation/nav_graph_my_netflix"/>
+
+    <!--<activity
+        android:id="@+id/activitySearch"
+        android:name="com.app.netflixwithrxjava.view.activity.SearchActivity"
+        tools:layout="@layout/activity_search"/>-->
+
+    <dialog
+        android:id="@+id/myNetflixMenuBottomSheetDialogFragment"
+        android:name="com.app.main.fragment.MyNetflixMenuBottomSheetDialogFragment"
+        android:label="MyNetflixMenuBottomSheetDialogFragment">
+
+        <!--<action
+            android:id="@+id/action_bottomDialogSheetFragmentNetflixMenu_to_activityAppSettings"
+            app:destination="@id/activityAppSettings"/>-->
+
+    </dialog>
+
+    <!--<activity
+        android:id="@+id/activityAppSettings"
+        android:name="com.app.netflixwithrxjava.view.activity.AppSettingsActivity"
+        tools:layout="@layout/activity_app_settings"/>-->
+
+</navigation>
