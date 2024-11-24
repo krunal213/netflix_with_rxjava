@@ -9,7 +9,25 @@
         android:id="@+id/fragmentHome"
         android:name="com.app.main.fragment.HomeFragment"
         tools:layout="@layout/fragment_home"
-        android:label="" />
+        android:label="">
+
+        <action
+            android:id="@+id/action_fragmentHome_to_fragmentGamesDetail"
+            app:destination="@id/fragmentGamesDetail"
+            app:enterAnim="@anim/slide_from_right"
+            app:exitAnim="@anim/hold"
+            app:popExitAnim="@anim/pop_slide_from_left"
+            app:popEnterAnim="@anim/hold"/>
+
+        <action
+            android:id="@+id/action_fragmentHome_to_fragmentMoviesDetail"
+            app:destination="@id/fragmentMoviesDetail"
+            app:enterAnim="@anim/slide_from_right"
+            app:exitAnim="@anim/hold"
+            app:popExitAnim="@anim/pop_slide_from_left"
+            app:popEnterAnim="@anim/hold"/>
+
+    </fragment>
 
     <fragment
         android:id="@+id/fragmentGames"
@@ -46,5 +64,17 @@
         android:id="@+id/activityAppSettings"
         android:name="com.app.netflixwithrxjava.view.activity.AppSettingsActivity"
         tools:layout="@layout/activity_app_settings"/>-->
+
+    <fragment
+        android:id="@+id/fragmentGamesDetail"
+        android:name="com.app.main.fragment.GamesDetailFragment"
+        tools:layout="@layout/fragment_game_detail"
+        android:label="@string/string_menu_games"/>
+
+    <fragment
+        android:id="@+id/fragmentMoviesDetail"
+        android:name="com.app.main.fragment.MoviesDetailFragment"
+        tools:layout="@layout/fragment_game_detail"
+        android:label="@string/string_menu_games"/>
 
 </navigation>

@@ -14,7 +14,7 @@
         app:defaultNavHost="true"
         app:navGraph="@navigation/nav_graph_netflix"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/bottom_navigation_view"/>
+        app:layout_constraintBottom_toTopOf="@id/bottom_navigation_view" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation_view"

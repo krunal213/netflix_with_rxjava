@@ -24,6 +24,8 @@ class NetflixMainActivity : AppCompatActivity(), NavController.OnDestinationChan
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var navController: NavController
     private lateinit var toolbar: Toolbar
+    private lateinit var main: ConstraintLayout
+    private lateinit var fragment: View
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,16 +44,9 @@ class NetflixMainActivity : AppCompatActivity(), NavController.OnDestinationChan
         NavigationUI.setupWithNavController(bottomNavigationView, navController)
         NavigationUI.setupWithNavController(toolbar, navController, appBarConfiguration)
         setSupportActionBar(toolbar)
-        val main = findViewById<ConstraintLayout>(R.id.main)
-        val fragment = findViewById<View>(R.id.fragment_container)
+        main = findViewById(R.id.main)
+        fragment = findViewById<View>(R.id.fragment_container)
         WindowCompat.setDecorFitsSystemWindows(window, false)
-        ViewCompat.setOnApplyWindowInsetsListener(main) { view, windowInsets ->
-            toolbar.setMarginTop(windowInsets.systemWindowInsetTop)
-            fragment.updatePadding(
-                top = (toolbar.layoutParams.height + windowInsets.systemWindowInsetTop)
-            )
-            windowInsets
-        }
         navController.addOnDestinationChangedListener(this)
     }
 
@@ -72,6 +67,22 @@ class NetflixMainActivity : AppCompatActivity(), NavController.OnDestinationChan
             R.id.fragmentHome -> {
                 supportActionBar?.setIcon(null)
                 toolbar.setNavigationIcon(R.drawable.ic_netflix_v3)
+                ViewCompat.setOnApplyWindowInsetsListener(main) { view, windowInsets ->
+                    toolbar.setMarginTop(windowInsets.systemWindowInsetTop)
+                    fragment.updatePadding(
+                        top = (toolbar.layoutParams.height + windowInsets.systemWindowInsetTop)
+                    )
+                    windowInsets
+                }
+            }
+            R.id.fragmentGamesDetail->{
+                ViewCompat.setOnApplyWindowInsetsListener(main) { view, windowInsets ->
+                    toolbar.setMarginTop(windowInsets.systemWindowInsetTop)
+                    fragment.updatePadding(
+                        top = 0
+                    )
+                    windowInsets
+                }
             }
             else->{
                 supportActionBar?.setIcon(null)

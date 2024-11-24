@@ -8,11 +8,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.app.main.R
 import com.bumptech.glide.Glide
 
-class MoviesAdapter(private val movies: List<Movie>) : RecyclerView.Adapter<MoviesAdapter.MovieHolder>() {
+class MoviesAdapter(private val movies: List<Movie>, val clickListener: (view: View) -> Unit) :
+    RecyclerView.Adapter<MoviesAdapter.MovieHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieHolder {
-        val movieView = LayoutInflater.from(parent.context).inflate(R.layout.item_movie, parent, false)
-        return MovieHolder(movieView)
+        val movieView =
+            LayoutInflater.from(parent.context).inflate(R.layout.item_movie, parent, false)
+        return MovieHolder(movieView, clickListener)
     }
 
     override fun getItemCount() = movies.size
@@ -21,10 +23,13 @@ class MoviesAdapter(private val movies: List<Movie>) : RecyclerView.Adapter<Movi
         movieHolder.bind(movies[position])
     }
 
-    class MovieHolder(view: View) : RecyclerView.ViewHolder(view) {
+    class MovieHolder(view: View, val clickListener: (view: View) -> Unit) :
+        RecyclerView.ViewHolder(view) {
 
         fun bind(movie: Movie) {
-            itemView.findViewById<ImageView>(R.id.movieThumbnailImageView).loadImage(movie.thumbnail)
+            itemView.findViewById<ImageView>(R.id.movieThumbnailImageView)
+                .loadImage(movie.thumbnail)
+            itemView.setOnClickListener(clickListener)
         }
 
         private fun ImageView.loadImage(url: String?) {
