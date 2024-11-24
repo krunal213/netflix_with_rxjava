@@ -1,0 +1,20 @@
+<resources>
+
+    <style name="Theme.NetflixWithRxJava.Main" parent="Theme.NetflixWithRxJava">
+        <item name="bottomNavigationStyle">@style/Theme.NetflixWithRxJava.BottomNavigationView.Colored</item>
+    </style>
+
+    <style name="Theme.NetflixWithRxJava.BottomNavigationView" parent="@style/TextAppearance.AppCompat.Caption">
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="Theme.NetflixWithRxJava.BottomNavigationView.Active" parent="@style/TextAppearance.AppCompat.Caption">
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="Theme.NetflixWithRxJava.BottomNavigationView.Colored" parent="Widget.MaterialComponents.BottomNavigationView.Colored">
+        <item name="itemTextAppearanceInactive">@style/Theme.NetflixWithRxJava.BottomNavigationView</item>
+        <item name="itemTextAppearanceActive">@style/Theme.NetflixWithRxJava.BottomNavigationView.Active</item>
+    </style>
+
+</resources>
