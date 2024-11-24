@@ -12,7 +12,6 @@ class SearchActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
         setContentView(R.layout.activity_search)
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         val searchView = findViewById<SearchView>(R.id.searchView)

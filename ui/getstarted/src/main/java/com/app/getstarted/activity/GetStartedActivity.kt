@@ -19,7 +19,6 @@ class GetStartedActivity : AppCompatActivity(), NavController.OnDestinationChang
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
         setContentView(R.layout.activity_get_started)
         toolbar = findViewById<Toolbar>(R.id.toolbar)
         navController = findNavController(R.id.fragment_container)

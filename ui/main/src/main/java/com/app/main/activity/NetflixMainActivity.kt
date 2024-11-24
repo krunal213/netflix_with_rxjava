@@ -27,7 +27,6 @@ class NetflixMainActivity : AppCompatActivity(), NavController.OnDestinationChan
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
         setContentView(R.layout.activity_netflix_main)
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation_view)
         toolbar = findViewById(R.id.toolbar)

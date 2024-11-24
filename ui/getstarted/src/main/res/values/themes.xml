@@ -4,6 +4,7 @@
         <item name="materialButtonStyle">@style/Widget.App.Button</item>
         <item name="materialButtonOutlinedStyle">@style/Widget.App.OutlinedButton</item>
         <item name="textInputStyle">@style/Widget.App.TextInputLayout.FilledBox</item>
+        <item name="bottomSheetDialogTheme">@style/ThemeOverlay.App.BottomSheetDialog</item>
     </style>
 
     <style name="ThemeOverlay.App.Button" parent="">
@@ -27,9 +28,7 @@
         <item name="android:windowExitAnimation">@anim/slide_out_down</item>
     </style>
 
-    <style name="Theme.NetflixWithRxJava.BottomSheet.Full" parent="Theme.NetflixWithRxJava.GetStarted">
-        <item name="bottomSheetDialogTheme">@style/ThemeOverlay.App.BottomSheetDialog</item>
-    </style>
+    <style name="Theme.NetflixWithRxJava.BottomSheet.Full" parent="Theme.NetflixWithRxJava.GetStarted"/>
 
     <style name="ThemeOverlay.App.BottomSheetDialog" parent="ThemeOverlay.MaterialComponents.BottomSheetDialog">
         <item name="bottomSheetStyle">@style/ModalBottomSheetDialog</item>

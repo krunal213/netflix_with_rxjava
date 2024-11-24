@@ -19,7 +19,6 @@ class SplashActivity : AppCompatActivity(), Animator.AnimatorListener {
 
     }
 
-
     override fun onAnimationEnd(p0: Animator) {
         startActivity(Intent().apply {
             setClassName(this@SplashActivity, "com.app.getstarted.activity.GetStartedActivity")
