@@ -70,11 +70,11 @@ class NetflixMainActivity : AppCompatActivity(), NavController.OnDestinationChan
     ) {
         when (destination.id) {
             R.id.fragmentHome -> {
-                //supportActionBar?.setLogo(R.drawable.ic_netflix)
+                supportActionBar?.setIcon(null)
                 toolbar.setNavigationIcon(R.drawable.ic_netflix_v3)
             }
             else->{
-                toolbar.setNavigationIcon(null)
+                supportActionBar?.setIcon(null)
             }
         }
     }
