@@ -5,13 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import androidx.core.view.ViewCompat
-import androidx.core.view.updateLayoutParams
+import androidx.core.widget.NestedScrollView
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.app.main.NetflixNestedScrollView
 import com.app.main.R
+import com.app.main.activity.NetflixMainActivity
 import com.app.main.dummy.MoviesAdapter
 import com.app.main.dummy.getTestData
 
@@ -35,6 +36,8 @@ class HomeFragment : DownloadSearchMenuFragment() {
         view.findViewById<ImageView>(R.id.imageView).setOnClickListener {
             findNavController().navigate(R.id.action_fragmentHome_to_fragmentGamesDetail)
         }
-
+        view
+            .findViewById<NetflixNestedScrollView>(R.id.nestedScrollView)
+            .setNetflixOnScrollChangeListener(activity as NetflixMainActivity)
     }
 }

@@ -2,13 +2,15 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:clipChildren="false"
-    android:clipToPadding="false">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:clipToPadding="false"
+    android:clipChildren="false">
 
-    <androidx.core.widget.NestedScrollView
+    <com.app.main.NetflixNestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fillViewport="true">
+        android:fillViewport="true"
+        android:id="@+id/nestedScrollView">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -29,6 +31,6 @@
 
         </LinearLayout>
 
-    </androidx.core.widget.NestedScrollView>
+    </com.app.main.NetflixNestedScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,10 +1,11 @@
 package com.app.main.activity
 
+import android.graphics.Rect
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
+import android.view.ViewGroup.LayoutParams
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.app.AppCompatDelegate
 import androidx.appcompat.widget.Toolbar
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.ViewCompat
@@ -16,22 +17,26 @@ import androidx.navigation.NavDestination
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
+import com.app.main.NetflixNestedScrollView
 import com.app.main.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.tabs.TabLayout
 
-class NetflixMainActivity : AppCompatActivity(), NavController.OnDestinationChangedListener {
+class NetflixMainActivity : AppCompatActivity(), NavController.OnDestinationChangedListener, NetflixNestedScrollView.NetflixOnScrollChangeListener {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var navController: NavController
     private lateinit var toolbar: Toolbar
     private lateinit var main: ConstraintLayout
     private lateinit var fragment: View
+    private lateinit var tabLayout: TabLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_netflix_main)
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation_view)
         toolbar = findViewById(R.id.toolbar)
+        tabLayout = findViewById(R.id.tabLayout)
         navController = findNavController(R.id.fragment_container)
         appBarConfiguration = AppBarConfiguration(
             setOf(
@@ -45,9 +50,10 @@ class NetflixMainActivity : AppCompatActivity(), NavController.OnDestinationChan
         NavigationUI.setupWithNavController(toolbar, navController, appBarConfiguration)
         setSupportActionBar(toolbar)
         main = findViewById(R.id.main)
-        fragment = findViewById<View>(R.id.fragment_container)
+        fragment = findViewById(R.id.fragment_container)
         WindowCompat.setDecorFitsSystemWindows(window, false)
         navController.addOnDestinationChangedListener(this)
+        tabLayout.measure(LayoutParams.MATCH_PARENT,LayoutParams.WRAP_CONTENT)
     }
 
     override fun onSupportNavigateUp(): Boolean {
@@ -69,8 +75,10 @@ class NetflixMainActivity : AppCompatActivity(), NavController.OnDestinationChan
                 toolbar.setNavigationIcon(R.drawable.ic_netflix_v3)
                 ViewCompat.setOnApplyWindowInsetsListener(main) { view, windowInsets ->
                     toolbar.setMarginTop(windowInsets.systemWindowInsetTop)
+                    //visibility is not possible until not use setOnApplyWindowInsetsListener
+                    tabLayout.visibility = View.VISIBLE
                     fragment.updatePadding(
-                        top = (toolbar.layoutParams.height + windowInsets.systemWindowInsetTop)
+                        top = (toolbar.layoutParams.height + windowInsets.systemWindowInsetTop + tabLayout.measuredHeight)
                     )
                     windowInsets
                 }
@@ -78,6 +86,8 @@ class NetflixMainActivity : AppCompatActivity(), NavController.OnDestinationChan
             R.id.fragmentGamesDetail->{
                 ViewCompat.setOnApplyWindowInsetsListener(main) { view, windowInsets ->
                     toolbar.setMarginTop(windowInsets.systemWindowInsetTop)
+                    //visibility is not possible until not use setOnApplyWindowInsetsListener
+                    tabLayout.visibility = View.GONE
                     fragment.updatePadding(
                         top = 0
                     )
@@ -86,8 +96,35 @@ class NetflixMainActivity : AppCompatActivity(), NavController.OnDestinationChan
             }
             else->{
                 supportActionBar?.setIcon(null)
+                ViewCompat.setOnApplyWindowInsetsListener(main) { view, windowInsets ->
+                    toolbar.setMarginTop(windowInsets.systemWindowInsetTop)
+                    //visibility is not possible until not use setOnApplyWindowInsetsListener
+                    tabLayout.visibility = View.GONE
+                    fragment.updatePadding(
+                        top = (toolbar.layoutParams.height + windowInsets.systemWindowInsetTop)
+                    )
+                    windowInsets
+                }
             }
         }
     }
+
+    override fun setClipBounds(clipHeight: Int) {
+        tabLayout.post {
+            tabLayout.clipBounds = Rect(
+                0, clipHeight, tabLayout.width, tabLayout.height
+            )
+        }
+    }
+
+    override fun scrolledY(Y: Float) {
+        tabLayout.y = Y
+    }
+
+    override fun getY(): Float {
+        return tabLayout.y
+    }
+
+    override fun getHeight(): Int = tabLayout.height
 
 }
