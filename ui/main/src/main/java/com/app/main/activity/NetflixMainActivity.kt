@@ -1,6 +1,5 @@
 package com.app.main.activity
 
-import android.graphics.Rect
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
@@ -54,6 +53,7 @@ class NetflixMainActivity : AppCompatActivity(), NavController.OnDestinationChan
         WindowCompat.setDecorFitsSystemWindows(window, false)
         navController.addOnDestinationChangedListener(this)
         tabLayout.measure(LayoutParams.MATCH_PARENT,LayoutParams.WRAP_CONTENT)
+        toolbar.measure(LayoutParams.MATCH_PARENT,LayoutParams.WRAP_CONTENT)
     }
 
     override fun onSupportNavigateUp(): Boolean {
@@ -78,7 +78,7 @@ class NetflixMainActivity : AppCompatActivity(), NavController.OnDestinationChan
                     //visibility is not possible until not use setOnApplyWindowInsetsListener
                     tabLayout.visibility = View.VISIBLE
                     fragment.updatePadding(
-                        top = (toolbar.layoutParams.height + windowInsets.systemWindowInsetTop + tabLayout.measuredHeight)
+                        top = (toolbar.measuredHeight + windowInsets.systemWindowInsetTop + tabLayout.measuredHeight)
                     )
                     windowInsets
                 }
@@ -109,22 +109,10 @@ class NetflixMainActivity : AppCompatActivity(), NavController.OnDestinationChan
         }
     }
 
-    override fun setClipBounds(clipHeight: Int) {
-        tabLayout.post {
-            tabLayout.clipBounds = Rect(
-                0, clipHeight, tabLayout.width, tabLayout.height
-            )
-        }
+    override fun setTranslationY(mHeaderDiffTotal: Int) {
+        tabLayout.translationY = mHeaderDiffTotal.toFloat()
     }
 
-    override fun scrolledY(Y: Float) {
-        tabLayout.y = Y
-    }
-
-    override fun getY(): Float {
-        return tabLayout.y
-    }
-
-    override fun getHeight(): Int = tabLayout.height
+    override val minHeaderTranslation = -tabLayout.height
 
 }

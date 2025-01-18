@@ -3,38 +3,23 @@ package com.app.main
 import android.content.Context
 import android.util.AttributeSet
 import androidx.core.widget.NestedScrollView
+import kotlin.math.max
+import kotlin.math.min
 
-class NetflixNestedScrollView(context: Context, attrs: AttributeSet?) :
-    NestedScrollView(context, attrs), NestedScrollView.OnScrollChangeListener {
+class NetflixNestedScrollView : NestedScrollView, NestedScrollView.OnScrollChangeListener {
+    private var mHeaderDiffTotal = 0
+    private var mMinHeaderTranslation = 0
+    private var netflixOnScrollChangeListener: NetflixOnScrollChangeListener? = null
 
-    private var previousScrollY = 0.0f
-    private var initialScrollViewPosition = 0f
-    private var shouldInitialize = true
-    private var clipHeight = 0
-    private var yLocationOfView = 0f
-    private var heightOfView = 0
-    private lateinit var l: NetflixOnScrollChangeListener
+    constructor(context: Context) : super(context)
 
-    fun setNetflixOnScrollChangeListener(l: NetflixOnScrollChangeListener?) {
-        viewTreeObserver.addOnGlobalLayoutListener {
-            if (l != null) {
-                this.l = l
-                yLocationOfView = this.l.getY()
-                heightOfView = this.l.getHeight()
-                setOnScrollChangeListener(this)
-            }
-        }
-    }
+    constructor(context: Context, attrs: AttributeSet?) : super(context, attrs)
 
-    interface NetflixOnScrollChangeListener {
-        fun setClipBounds(clipHeight: Int)
-
-        fun scrolledY(Y: Float)
-
-        fun getY(): Float
-
-        fun getHeight(): Int
-    }
+    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(
+        context,
+        attrs,
+        defStyleAttr
+    )
 
     override fun onScrollChange(
         v: NestedScrollView,
@@ -43,46 +28,36 @@ class NetflixNestedScrollView(context: Context, attrs: AttributeSet?) :
         oldScrollX: Int,
         oldScrollY: Int
     ) {
-        val dy = scrollY - oldScrollY
-        val isScrollingUp = dy > previousScrollY
-        val isVisible = l.getY() >= 0.0f
-        val beforeInitialPosition = l.getY() < initialScrollViewPosition
-        if (isScrollingUp && isVisible) {
-            if (shouldInitialize) {
-                initialScrollViewPosition = l.getY()
-                shouldInitialize = false
-            }
-            l.scrolledY(l.getY() - dy)
-        } else if (!isScrollingUp) {
-            if (beforeInitialPosition) {
-                l.scrolledY(
-                    (l.getY() - dy).coerceIn(
-                        (yLocationOfView - heightOfView),
-                        yLocationOfView
-                    )
-                )
-            } else {
-                if (!shouldInitialize) {
-                    l.scrolledY(initialScrollViewPosition)
-                }
-            }
-        }
-        if (dy == 0) {
-            clipHeight = 0
-            l.setClipBounds(clipHeight)
-        } else if (dy > 0) {
-            if (l.getHeight() > clipHeight) {
-                clipHeight = clipHeight.plus(dy).coerceIn(0, l.getHeight())
-                l.setClipBounds(clipHeight)
-            }
+        val diff = oldScrollY - scrollY
+        mHeaderDiffTotal = if (diff <= 0) {
+            max(
+                (mHeaderDiffTotal + diff).toDouble(),
+                mMinHeaderTranslation.toDouble()
+            ).toInt()
         } else {
-            if (isVisible) {
-                if (clipHeight > 0) {
-                    clipHeight = clipHeight.plus(dy).coerceIn(0, l.getHeight())
-                    l.setClipBounds(clipHeight)
-                }
+            min(
+                max(
+                    (mHeaderDiffTotal + diff).toDouble(),
+                    mMinHeaderTranslation.toDouble()
+                ), 0.0
+            ).toInt()
+        }
+        netflixOnScrollChangeListener?.setTranslationY(mHeaderDiffTotal)
+    }
+
+    fun setNetflixOnScrollChangeListener(netflixOnScrollChangeListener: NetflixOnScrollChangeListener?) {
+        if (netflixOnScrollChangeListener != null) {
+            viewTreeObserver.addOnGlobalLayoutListener {
+                mMinHeaderTranslation = netflixOnScrollChangeListener.minHeaderTranslation
+                this@NetflixNestedScrollView.netflixOnScrollChangeListener =
+                    netflixOnScrollChangeListener
+                this@NetflixNestedScrollView.setOnScrollChangeListener(this@NetflixNestedScrollView)
             }
         }
     }
 
+    interface NetflixOnScrollChangeListener {
+        fun setTranslationY(mHeaderDiffTotal: Int)
+        val minHeaderTranslation: Int
+    }
 }
