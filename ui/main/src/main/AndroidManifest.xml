@@ -6,6 +6,10 @@
             android:name=".activity.NetflixMainActivity"
             android:exported="true"
             android:theme="@style/Theme.NetflixWithRxJava.Main"/>
+        <activity
+            android:name=".activity.MyListActivity"
+            android:exported="true"
+            android:theme="@style/Theme.NetflixWithRxJava.Main"/>
     </application>
 
 </manifest>

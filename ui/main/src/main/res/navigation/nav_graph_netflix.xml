@@ -77,4 +77,58 @@
         tools:layout="@layout/fragment_game_detail"
         android:label="@string/string_menu_games"/>
 
+    <fragment
+        android:id="@+id/fragmentTVShows"
+        android:name="com.app.main.fragment.TVShowsFragment"
+        tools:layout="@layout/fragment_home"
+        android:label="@string/string_tv_shows"/>
+
+    <fragment
+        android:id="@+id/fragmentMovies"
+        android:name="com.app.main.fragment.MoviesFragment"
+        tools:layout="@layout/fragment_home"
+        android:label="@string/string_movies"/>
+
+    <fragment
+        android:id="@+id/fragmentCategories"
+        android:name="com.app.main.fragment.CategoriesFragment"
+        tools:layout="@layout/fragment_home"
+        android:label="@string/string_categories"/>
+
+    <activity
+        android:id="@+id/activityMyList"
+        android:name="com.app.main.activity.MyListActivity"
+        android:label="My List"/>
+
+    <action
+        android:id="@+id/action_tvShowsFragment"
+        app:destination="@id/fragmentTVShows"
+        app:launchSingleTop="true"/>
+
+    <action
+        android:id="@+id/action_moviesFragment"
+        app:destination="@id/fragmentMovies"
+        app:launchSingleTop="true"/>
+
+    <dialog
+        android:id="@+id/categoriesMenuFullScreenDialogFragment"
+        android:name="com.app.main.fragment.CategoriesMenuFullScreenDialogFragment"
+        android:label=""
+        tools:layout="@layout/dialog_fragment_categories_menu_full_screen">
+
+        <action
+            android:id="@+id/action_categoriesMenuFullScreenDialogFragment_to_activityMyList"
+            app:destination="@id/activityMyList"/>
+
+        <action
+            android:id="@+id/action_categoriesMenuFullScreenDialogFragment_to_fragmentCategories"
+            app:destination="@id/fragmentCategories"/>
+
+    </dialog>
+
+    <action
+        android:id="@+id/action_categoriesMenuFullScreenDialogFragment"
+        app:destination="@id/categoriesMenuFullScreenDialogFragment"
+        app:launchSingleTop="true"/>
+
 </navigation>

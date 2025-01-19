@@ -17,35 +17,57 @@
         app:navGraph="@navigation/nav_graph_netflix" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/appBarConstraintLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:alpha="0.76"
         app:layout_constraintTop_toTopOf="parent">
 
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tabLayout"
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#FF000000"
-            android:visibility="gone"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/appbarLayout"
-            app:tabMode="scrollable"
-            app:tabSelectedTextColor="@android:color/holo_red_light"
-            app:tabTextColor="@android:color/white">
+            app:singleLine="true"
+            app:singleSelection="true"
+            android:paddingLeft="12dp"
+            android:paddingBottom="4dp">
 
-            <com.google.android.material.tabs.TabItem
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_close"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="First" />
+                style="@style/Theme.NetflixWithRxJava.Chip.Choice"
+                app:closeIconEnabled="true"
+                app:textStartPadding="0dp"
+                app:textEndPadding="0dp"
+                android:visibility="gone"/>
 
-            <com.google.android.material.tabs.TabItem
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_tv_shows"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Second" />
+                style="@style/Theme.NetflixWithRxJava.Chip.Choice"
+                android:text="TV Shows" />
 
-        </com.google.android.material.tabs.TabLayout>
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_movies"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Theme.NetflixWithRxJava.Chip.Choice"
+                android:text="Movies" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_categories"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Theme.NetflixWithRxJava.Chip.Choice"
+                android:text="Categories"
+                app:chipIcon="@drawable/ic_outline_expand_more"
+                app:chipIconVisible="true"/>
+
+        </com.google.android.material.chip.ChipGroup>
 
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/appbarLayout"

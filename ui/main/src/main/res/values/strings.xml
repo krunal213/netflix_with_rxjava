@@ -313,4 +313,7 @@
         are also reproduced in their exact original form, accompanied by English versions from the 1914
         translation by H. Rackham.
     </string>
+    <string name="string_tv_shows">TV Shows\n</string>
+    <string name="string_movies">Movies</string>
+    <string name="string_categories">Categories</string>
 </resources>

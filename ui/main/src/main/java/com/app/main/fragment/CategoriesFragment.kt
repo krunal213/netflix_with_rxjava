@@ -16,7 +16,7 @@ import com.app.main.activity.NetflixMainActivity
 import com.app.main.dummy.MoviesAdapter
 import com.app.main.dummy.getTestData
 
-class HomeFragment : DownloadSearchMenuFragment() {
+class CategoriesFragment : DownloadSearchMenuFragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -30,7 +30,7 @@ class HomeFragment : DownloadSearchMenuFragment() {
         view.findViewById<RecyclerView>(R.id.moviesRecyclerView).apply {
             layoutManager = GridLayoutManager(context, 2)
             adapter = MoviesAdapter(getTestData(),{
-                findNavController().navigate(R.id.action_fragmentHome_to_fragmentMoviesDetail)
+                //findNavController().navigate(R.id.action_fragmentHome_to_fragmentMoviesDetail)
             })
         }
         view.findViewById<ImageView>(R.id.imageView).setOnClickListener {

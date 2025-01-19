@@ -48,7 +48,7 @@ class NetflixNestedScrollView : NestedScrollView, NestedScrollView.OnScrollChang
     fun setNetflixOnScrollChangeListener(netflixOnScrollChangeListener: NetflixOnScrollChangeListener?) {
         if (netflixOnScrollChangeListener != null) {
             viewTreeObserver.addOnGlobalLayoutListener {
-                mMinHeaderTranslation = netflixOnScrollChangeListener.minHeaderTranslation
+                mMinHeaderTranslation = netflixOnScrollChangeListener.minHeaderTranslation()
                 this@NetflixNestedScrollView.netflixOnScrollChangeListener =
                     netflixOnScrollChangeListener
                 this@NetflixNestedScrollView.setOnScrollChangeListener(this@NetflixNestedScrollView)
@@ -58,6 +58,6 @@ class NetflixNestedScrollView : NestedScrollView, NestedScrollView.OnScrollChang
 
     interface NetflixOnScrollChangeListener {
         fun setTranslationY(mHeaderDiffTotal: Int)
-        val minHeaderTranslation: Int
+        fun minHeaderTranslation() : Int
     }
 }
