@@ -49,6 +49,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -60,5 +61,20 @@ dependencies {
     kapt(libs.room.compiler)
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
-    
+    implementation(libs.glide)
+    implementation("androidx.preference:preference-ktx:1.2.0")
+    implementation("com.airbnb.android:lottie:6.5.2")
+    implementation("it.xabaras.android:viewpagerindicator:2.0")
+    implementation("com.github.cachapa:ExpandableLayout:2.9.2")
+
+    implementation(project(":ui:splash"))
+    implementation(project(":ui:getstarted"))
+    implementation(project(":ui:help"))
+    implementation(project(":ui:main"))
+    implementation(project(":ui:search"))
+    implementation(project(":ui:settings"))
+
+    implementation(project(":android_resource"))
+    //compile 'com.github.aakira:expandable-layout:1.6.0@aar'
+
 }

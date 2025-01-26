@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menuPrivacy"
+        android:title="PRIVACY"
+        app:showAsAction="always"/>
+
+    <item android:id="@+id/action_loginFragment"
+        android:title="SIGN IN"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/faqBottomSheetDialogFragment"
+        android:title="FAQs"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/helpActivity"
+        android:title="Help"
+        app:showAsAction="never"/>
+</menu>
+
+

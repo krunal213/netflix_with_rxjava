@@ -1,0 +1,13 @@
+<resources>
+
+    <style name="Theme.NetflixWithRxJava.search" parent="Theme.NetflixWithRxJava">
+        <item name="searchViewStyle">@style/Theme.NetflixWithRxJava.SearchView</item>
+    </style>
+
+    <style name="Theme.NetflixWithRxJava.SearchView" parent="Widget.AppCompat.Light.SearchView">
+        <item name="queryBackground">@color/color_search_view</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textColorSecondary">@android:color/white</item>
+    </style>
+
+</resources>

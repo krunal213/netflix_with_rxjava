@@ -9,6 +9,7 @@ pluginManagement {
         }
         mavenCentral()
         gradlePluginPortal()
+        maven { url = uri("https://jitpack.io") }
     }
 }
 dependencyResolutionManagement {
@@ -16,9 +17,16 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven { url = uri("https://jitpack.io") }
     }
 }
 
 rootProject.name = "NetflixWithRxJava"
 include(":app")
- 
+include(":ui:splash")
+include(":ui:getstarted")
+include(":ui:help")
+include(":ui:main")
+include(":ui:search")
+include(":ui:settings")
+include(":android_resource")
