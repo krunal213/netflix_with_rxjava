@@ -16,7 +16,7 @@
         android:theme="@style/Theme.NetflixWithRxJava"
         tools:targetApi="31">
         <activity
-            android:name="com.app.splash.activity.SplashActivity"
+            android:name="com.app.main.activity.NetflixMainActivity"
             android:exported="true"
             android:windowSoftInputMode="stateAlwaysVisible">
             <intent-filter>
