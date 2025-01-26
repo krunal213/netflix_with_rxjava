@@ -139,7 +139,9 @@ class NetflixMainActivity : AppCompatActivity(), NavController.OnDestinationChan
             }
 
             R.id.fragmentGamesDetail -> {
-                //layout.background = null
+                layout.setBackgroundResource(android.R.color.transparent)
+                appBarLayout.setBackgroundResource(android.R.color.transparent)
+                chipGroup.setBackgroundResource(android.R.color.transparent)
                 ViewCompat.setOnApplyWindowInsetsListener(main) { view, windowInsets ->
                     toolbar.setMarginTop(windowInsets.systemWindowInsetTop)
                     //visibility is not possible until not use setOnApplyWindowInsetsListener
@@ -210,6 +212,9 @@ class NetflixMainActivity : AppCompatActivity(), NavController.OnDestinationChan
             }
 
             else -> {
+                layout.setBackgroundResource(android.R.color.transparent)
+                appBarLayout.setBackgroundResource(android.R.color.transparent)
+                chipGroup.setBackgroundResource(android.R.color.transparent)
                 supportActionBar?.setIcon(null)
                 ViewCompat.setOnApplyWindowInsetsListener(main) { view, windowInsets ->
                     toolbar.setMarginTop(windowInsets.systemWindowInsetTop)
@@ -245,6 +250,11 @@ class NetflixMainActivity : AppCompatActivity(), NavController.OnDestinationChan
                 appBarLayout.setBackgroundColor(color)
                 chipGroup.setBackgroundColor(color)
                 layout.setBackgroundColor(color)
+            }
+            else->{
+                layout.setBackgroundColor(Color.TRANSPARENT)
+                appBarLayout.setBackgroundColor(Color.TRANSPARENT)
+                chipGroup.setBackgroundColor(Color.TRANSPARENT)
             }
         }
     }

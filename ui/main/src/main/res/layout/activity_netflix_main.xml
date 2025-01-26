@@ -10,7 +10,6 @@
         android:name="com.app.main.fragment_host.NavHostFragmentImpl"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:clipToPadding="false"
         app:defaultNavHost="true"
         app:layout_constraintBottom_toTopOf="@id/bottom_navigation_view"
         app:layout_constraintTop_toTopOf="parent"
