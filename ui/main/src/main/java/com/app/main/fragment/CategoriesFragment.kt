@@ -22,7 +22,7 @@ class CategoriesFragment : DownloadSearchMenuFragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ) = inflater.inflate(R.layout.fragment_home,container,false)
+    ) = inflater.inflate(R.layout.fragment_categories,container,false)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -37,7 +37,7 @@ class CategoriesFragment : DownloadSearchMenuFragment() {
             findNavController().navigate(R.id.action_fragmentHome_to_fragmentGamesDetail)
         }
         view
-            .findViewById<NetflixNestedScrollView>(R.id.nestedScrollView)
+            .findViewById<NetflixNestedScrollView>(R.id.nestedScrollViewCategories)
             .setNetflixOnScrollChangeListener(activity as NetflixMainActivity)
 
     }

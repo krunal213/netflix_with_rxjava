@@ -43,6 +43,7 @@ class NetflixNestedScrollView : NestedScrollView, NestedScrollView.OnScrollChang
             ).toInt()
         }
         netflixOnScrollChangeListener?.setTranslationY(mHeaderDiffTotal)
+        netflixOnScrollChangeListener?.onNetflixScrollChange(v, scrollX, scrollY, oldScrollX, oldScrollY)
     }
 
     fun setNetflixOnScrollChangeListener(netflixOnScrollChangeListener: NetflixOnScrollChangeListener?) {
@@ -59,5 +60,12 @@ class NetflixNestedScrollView : NestedScrollView, NestedScrollView.OnScrollChang
     interface NetflixOnScrollChangeListener {
         fun setTranslationY(mHeaderDiffTotal: Int)
         fun minHeaderTranslation() : Int
+        fun onNetflixScrollChange(
+            v: NestedScrollView,
+            scrollX: Int,
+            scrollY: Int,
+            oldScrollX: Int,
+            oldScrollY: Int
+        )
     }
 }

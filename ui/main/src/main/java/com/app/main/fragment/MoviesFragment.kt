@@ -15,14 +15,30 @@ import com.app.main.R
 import com.app.main.activity.NetflixMainActivity
 import com.app.main.dummy.MoviesAdapter
 import com.app.main.dummy.getTestData
+import com.google.android.material.transition.FadeThroughProvider
+import com.google.android.material.transition.MaterialSharedAxis
+import com.google.android.material.transition.SlideDistanceProvider
 
 class MoviesFragment : DownloadSearchMenuFragment() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enterTransition = MaterialSharedAxis(MaterialSharedAxis.Y, true).apply {
+            duration = 1000
+            addTarget(R.id.main_view)
+            val slideDistanceProvider = primaryAnimatorProvider as SlideDistanceProvider
+            slideDistanceProvider.slideDistance = 400
+            val data = secondaryAnimatorProvider as FadeThroughProvider
+            data.progressThreshold = 0.7f
+        }
+        returnTransition = null
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ) = inflater.inflate(R.layout.fragment_home,container,false)
+    ) = inflater.inflate(R.layout.fragment_movies,container,false)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -37,7 +53,7 @@ class MoviesFragment : DownloadSearchMenuFragment() {
             findNavController().navigate(R.id.action_fragmentHome_to_fragmentGamesDetail)
         }
         view
-            .findViewById<NetflixNestedScrollView>(R.id.nestedScrollView)
+            .findViewById<NetflixNestedScrollView>(R.id.nestedScrollViewMovies)
             .setNetflixOnScrollChangeListener(activity as NetflixMainActivity)
 
     }

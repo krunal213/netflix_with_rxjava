@@ -8,41 +8,40 @@
     <fragment
         android:id="@+id/fragmentHome"
         android:name="com.app.main.fragment.HomeFragment"
-        tools:layout="@layout/fragment_home"
-        android:label="">
+        android:label=""
+        tools:layout="@layout/fragment_home">
 
         <action
             android:id="@+id/action_fragmentHome_to_fragmentGamesDetail"
             app:destination="@id/fragmentGamesDetail"
             app:enterAnim="@anim/slide_from_right"
             app:exitAnim="@anim/hold"
-            app:popExitAnim="@anim/pop_slide_from_left"
-            app:popEnterAnim="@anim/hold"/>
+            app:popEnterAnim="@anim/hold"
+            app:popExitAnim="@anim/pop_slide_from_left" />
 
         <action
             android:id="@+id/action_fragmentHome_to_fragmentMoviesDetail"
             app:destination="@id/fragmentMoviesDetail"
             app:enterAnim="@anim/slide_from_right"
             app:exitAnim="@anim/hold"
-            app:popExitAnim="@anim/pop_slide_from_left"
-            app:popEnterAnim="@anim/hold"/>
+            app:popEnterAnim="@anim/hold"
+            app:popExitAnim="@anim/pop_slide_from_left" />
 
     </fragment>
 
     <fragment
         android:id="@+id/fragmentGames"
         android:name="com.app.main.fragment.GamesFragment"
-        tools:layout="@layout/fragment_game"
-        android:label="@string/string_menu_games"/>
+        android:label="@string/string_menu_games"
+        tools:layout="@layout/fragment_game" />
 
     <fragment
         android:id="@+id/fragmentNewAndHot"
         android:name="com.app.main.fragment.NewAndHotFragment"
-        tools:layout="@layout/fragment_new_and_hot"
-        android:label="@string/string_menu_new_and_hot"/>
+        android:label="@string/string_menu_new_and_hot"
+        tools:layout="@layout/fragment_new_and_hot" />
 
-    <include
-        app:graph="@navigation/nav_graph_my_netflix"/>
+    <include app:graph="@navigation/nav_graph_my_netflix" />
 
     <!--<activity
         android:id="@+id/activitySearch"
@@ -68,47 +67,47 @@
     <fragment
         android:id="@+id/fragmentGamesDetail"
         android:name="com.app.main.fragment.GamesDetailFragment"
-        tools:layout="@layout/fragment_game_detail"
-        android:label="@string/string_menu_games"/>
+        android:label="@string/string_menu_games"
+        tools:layout="@layout/fragment_game_detail" />
 
     <fragment
         android:id="@+id/fragmentMoviesDetail"
         android:name="com.app.main.fragment.MoviesDetailFragment"
-        tools:layout="@layout/fragment_game_detail"
-        android:label="@string/string_menu_games"/>
+        android:label="@string/string_menu_games"
+        tools:layout="@layout/fragment_game_detail" />
 
     <fragment
         android:id="@+id/fragmentTVShows"
         android:name="com.app.main.fragment.TVShowsFragment"
-        tools:layout="@layout/fragment_home"
-        android:label="@string/string_tv_shows"/>
+        android:label="@string/string_tv_shows"
+        tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/fragmentMovies"
         android:name="com.app.main.fragment.MoviesFragment"
-        tools:layout="@layout/fragment_home"
-        android:label="@string/string_movies"/>
+        android:label="@string/string_movies"
+        tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/fragmentCategories"
         android:name="com.app.main.fragment.CategoriesFragment"
-        tools:layout="@layout/fragment_home"
-        android:label="@string/string_categories"/>
+        android:label="@string/string_categories"
+        tools:layout="@layout/fragment_home" />
 
     <activity
         android:id="@+id/activityMyList"
         android:name="com.app.main.activity.MyListActivity"
-        android:label="My List"/>
+        android:label="My List" />
 
     <action
         android:id="@+id/action_tvShowsFragment"
         app:destination="@id/fragmentTVShows"
-        app:launchSingleTop="true"/>
+        app:launchSingleTop="true" />
 
     <action
         android:id="@+id/action_moviesFragment"
         app:destination="@id/fragmentMovies"
-        app:launchSingleTop="true"/>
+        app:launchSingleTop="true" />
 
     <dialog
         android:id="@+id/categoriesMenuFullScreenDialogFragment"
@@ -118,17 +117,40 @@
 
         <action
             android:id="@+id/action_categoriesMenuFullScreenDialogFragment_to_activityMyList"
-            app:destination="@id/activityMyList"/>
+            app:destination="@id/activityMyList" />
 
         <action
             android:id="@+id/action_categoriesMenuFullScreenDialogFragment_to_fragmentCategories"
-            app:destination="@id/fragmentCategories"/>
+            app:destination="@id/fragmentCategories" />
 
     </dialog>
 
     <action
         android:id="@+id/action_categoriesMenuFullScreenDialogFragment"
         app:destination="@id/categoriesMenuFullScreenDialogFragment"
-        app:launchSingleTop="true"/>
+        app:launchSingleTop="true" />
+
+    <dialog
+        android:id="@+id/allCategoriesMenuFullScreenDialogFragment"
+        android:name="com.app.main.fragment.AllCategoriesMenuFullScreenDialogFragment"
+        android:label=""
+        tools:layout="@layout/dialog_fragment_categories_menu_full_screen">
+
+        <action
+            android:id="@+id/action_allCategoriesMenuFullScreenDialogFragment_to_fragmentTVShows"
+            app:destination="@id/fragmentTVShows"
+            app:launchSingleTop="true" />
+
+        <action
+            android:id="@+id/action_allCategoriesMenuFullScreenDialogFragment_to_fragmentMovies"
+            app:destination="@id/fragmentMovies"
+            app:launchSingleTop="true" />
+
+    </dialog>
+
+    <action
+        android:id="@+id/action_allCategoriesMenuFullScreenDialogFragment"
+        app:destination="@id/allCategoriesMenuFullScreenDialogFragment"
+        app:launchSingleTop="true" />
 
 </navigation>
