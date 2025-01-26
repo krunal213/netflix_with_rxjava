@@ -2,7 +2,7 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
     alias(libs.plugins.kapt)
-    alias(libs.plugins.navigationSafeargsKotlin)
+    //alias(libs.plugins.navigationSafeargsKotlin)
 }
 
 android {
@@ -44,28 +44,18 @@ android {
 
 dependencies {
 
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.material)
-    implementation(libs.androidx.activity)
-    implementation(libs.androidx.constraintlayout)
+    implementation(libs.dagger)
+    implementation(libs.room.runtime)
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    implementation(libs.glide)
+
+    kapt(libs.dagger.compiler)
+    kapt(libs.room.compiler)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    implementation(libs.androidx.navigation.fragment.ktx)
-    implementation(libs.androidx.navigation.ui.ktx)
-    implementation(libs.dagger)
-    kapt(libs.dagger.compiler)
-    implementation(libs.room.runtime)
-    kapt(libs.room.compiler)
-    implementation(libs.retrofit)
-    implementation(libs.converter.gson)
-    implementation(libs.glide)
-    implementation("androidx.preference:preference-ktx:1.2.0")
-    implementation("com.airbnb.android:lottie:6.5.2")
-    implementation("it.xabaras.android:viewpagerindicator:2.0")
-    implementation("com.github.cachapa:ExpandableLayout:2.9.2")
 
     implementation(project(":feature:ui:splash"))
     implementation(project(":feature:ui:getstarted"))
