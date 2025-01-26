@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.app.main"
+    namespace = "com.app.help"
     compileSdk = 34
 
     defaultConfig {
@@ -33,7 +33,6 @@ android {
 }
 
 dependencies {
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -42,13 +41,5 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-
-    implementation(libs.androidx.navigation.fragment.ktx)
-    implementation(libs.androidx.navigation.ui.ktx)
-
-    implementation("androidx.preference:preference-ktx:1.2.0")
-
-    implementation(libs.glide)
-
     implementation(project(":android_resource"))
 }

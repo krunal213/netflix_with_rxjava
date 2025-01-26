@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.app.help"
+    namespace = "com.app.splash"
     compileSdk = 34
 
     defaultConfig {
@@ -34,6 +34,7 @@ android {
 
 dependencies {
 
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -42,6 +43,5 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-
-    implementation(project(":android_resource"))
+    implementation("com.airbnb.android:lottie:6.5.2")
 }

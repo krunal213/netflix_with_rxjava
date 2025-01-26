@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.app.splash"
+    namespace = "com.app.main"
     compileSdk = 34
 
     defaultConfig {
@@ -42,5 +42,9 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    implementation("com.airbnb.android:lottie:6.5.2")
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
+    implementation("androidx.preference:preference-ktx:1.2.0")
+    implementation(libs.glide)
+    implementation(project(":android_resource"))
 }
