@@ -67,14 +67,13 @@ dependencies {
     implementation("it.xabaras.android:viewpagerindicator:2.0")
     implementation("com.github.cachapa:ExpandableLayout:2.9.2")
 
-    implementation(project(":ui:splash"))
-    implementation(project(":ui:getstarted"))
-    implementation(project(":ui:help"))
-    implementation(project(":ui:main"))
-    implementation(project(":ui:search"))
-    implementation(project(":ui:settings"))
+    implementation(project(":feature:ui:splash"))
+    implementation(project(":feature:ui:getstarted"))
+    implementation(project(":feature:ui:help"))
+    implementation(project(":feature:ui:main"))
+    implementation(project(":feature:ui:search"))
+    implementation(project(":feature:ui:settings"))
 
     implementation(project(":android_resource"))
-    //compile 'com.github.aakira:expandable-layout:1.6.0@aar'
 
 }
