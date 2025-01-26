@@ -2,19 +2,62 @@
 
     <style name="Theme.NetflixWithRxJava.Main" parent="Theme.NetflixWithRxJava">
         <item name="bottomNavigationStyle">@style/Theme.NetflixWithRxJava.BottomNavigationView.Colored</item>
+        <item name="colorPrimary">@android:color/transparent</item>
+        <item name="toolbarStyle">@style/Widget.App.Toolbar</item>
     </style>
 
-    <style name="Theme.NetflixWithRxJava.BottomNavigationView" parent="@style/TextAppearance.AppCompat.Caption">
+    <style name="Theme.NetflixWithRxJava.BottomNavigationView.InActive.Item.Caption" parent="@style/TextAppearance.AppCompat.Caption">
         <item name="android:textSize">10sp</item>
     </style>
 
-    <style name="Theme.NetflixWithRxJava.BottomNavigationView.Active" parent="@style/TextAppearance.AppCompat.Caption">
+    <style name="Theme.NetflixWithRxJava.BottomNavigationView.Active.Item.Caption" parent="@style/TextAppearance.AppCompat.Caption">
         <item name="android:textSize">10sp</item>
     </style>
 
     <style name="Theme.NetflixWithRxJava.BottomNavigationView.Colored" parent="Widget.MaterialComponents.BottomNavigationView.Colored">
-        <item name="itemTextAppearanceInactive">@style/Theme.NetflixWithRxJava.BottomNavigationView</item>
-        <item name="itemTextAppearanceActive">@style/Theme.NetflixWithRxJava.BottomNavigationView.Active</item>
+        <item name="itemTextAppearanceInactive">@style/Theme.NetflixWithRxJava.BottomNavigationView.InActive.Item.Caption</item>
+        <item name="itemTextAppearanceActive">@style/Theme.NetflixWithRxJava.BottomNavigationView.Active.Item.Caption</item>
+        <item name="materialThemeOverlay">@style/Theme.NetflixWithRxJava.BottomNavigationView</item>
     </style>
+
+    <style name="Theme.NetflixWithRxJava.Chip.Choice" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="chipStrokeColor">@android:color/white</item>
+        <item name="chipStrokeWidth">1dp</item>
+        <item name="chipBackgroundColor">@color/mtrl_choice_chip_background_color_netflix</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="chipSurfaceColor">@android:color/transparent</item>
+        <item name="closeIconTint">@android:color/white</item>
+        <item name="closeIcon">@drawable/ic_cancel</item>
+    </style>
+
+    <style name="Theme.NetflixWithRxJava.FullScreenDialog" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowBackground">#DA000000</item>
+        <item name="android:windowCloseOnTouchOutside">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+
+
+    <style name="Theme.NetflixWithRxJava.BottomNavigationView" parent="">
+        <item name="colorPrimary">#121212</item>
+        <!--<item name="colorOnPrimary">@color/shrine_pink_900</item>-->
+    </style>
+
+
+    <style name="Widget.App.Toolbar" parent="Widget.MaterialComponents.Toolbar.Primary">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Toolbar</item>
+
+        <!--<item name="titleTextAppearance">@style/TextAppearance.App.Headline6</item>
+        <item name="subtitleTextAppearance">@style/TextAppearance.App.Subtitle1</item>-->
+    </style>
+
+    <style name="ThemeOverlay.App.Toolbar" parent="">
+        <item name="colorOnPrimary">@android:color/white</item>
+    </style>
+
+
 
 </resources>
