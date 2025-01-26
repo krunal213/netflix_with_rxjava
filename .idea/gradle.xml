@@ -13,8 +13,6 @@
             <option value="$PROJECT_DIR$/android_resource" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/feature" />
-            <option value="$PROJECT_DIR$/feature/data" />
-            <option value="$PROJECT_DIR$/feature/data/main" />
             <option value="$PROJECT_DIR$/feature/ui" />
             <option value="$PROJECT_DIR$/feature/ui/getstarted" />
             <option value="$PROJECT_DIR$/feature/ui/help" />
