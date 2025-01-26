@@ -13,7 +13,7 @@ class NavHostFragmentImpl : NavHostFragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         val fragmentContainerView : FragmentContainerView = super.onCreateView(
             inflater,
             container,
