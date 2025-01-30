@@ -47,7 +47,7 @@ class NetflixMainActivity : AppCompatActivity(), NavController.OnDestinationChan
     private lateinit var chipAllCategories: Chip
     private lateinit var appBarLayout: AppBarLayout
     private lateinit var layout: ConstraintLayout
-    private val color = "1B415B" //5D1C1C,616161,1B415B
+    private val color = "56342D" //5D1C1C,616161,1B415B
     private val startColor = Color.parseColor("#$color")
     private val endColor = Color.parseColor("#000000")
     private val maxScroll = 300
