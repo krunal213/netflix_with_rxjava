@@ -11,6 +11,8 @@ import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
 import android.view.ViewGroup.LayoutParams
+import android.view.ViewTreeObserver
+import android.view.Window
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -30,6 +32,8 @@ import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
+import com.google.android.material.transition.platform.MaterialContainerTransform
+import com.google.android.material.transition.platform.MaterialContainerTransformSharedElementCallback
 
 class NetflixMainActivity : AppCompatActivity(), NavController.OnDestinationChangedListener,
     NetflixNestedScrollView.NetflixOnScrollChangeListener, View.OnClickListener {
@@ -47,16 +51,38 @@ class NetflixMainActivity : AppCompatActivity(), NavController.OnDestinationChan
     private lateinit var chipAllCategories: Chip
     private lateinit var appBarLayout: AppBarLayout
     private lateinit var layout: ConstraintLayout
-    private val color = "56342D" //5D1C1C,616161,1B415B
+    private val color = "20525E" //5D1C1C,616161,1B415B,56342D
     private val startColor = Color.parseColor("#$color")
     private val endColor = Color.parseColor("#000000")
     private val maxScroll = 300
     private val argbEvaluator = ArgbEvaluator()
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        window.requestFeature(Window.FEATURE_ACTIVITY_TRANSITIONS)
+        setEnterSharedElementCallback(MaterialContainerTransformSharedElementCallback())
+        window.sharedElementsUseOverlay = false
+        postponeEnterTransition()
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_netflix_main)
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation_view)
+
+        bottomNavigationView.viewTreeObserver.addOnPreDrawListener(object : ViewTreeObserver.OnPreDrawListener {
+            override fun onPreDraw(): Boolean {
+                bottomNavigationView.viewTreeObserver.removeOnPreDrawListener(this)
+                val menuView = bottomNavigationView.findViewById<ViewGroup>(R.id.nav_graph_my_netflix)
+                val firstItemView = menuView.getChildAt(0)
+                ViewCompat.setTransitionName(firstItemView, "shared_element")
+                val transform = MaterialContainerTransform().apply {
+                    addTarget(firstItemView)
+                    duration = 500
+                }
+                window.sharedElementEnterTransition = transform
+                startPostponedEnterTransition()
+                return true
+            }
+        })
+
         toolbar = findViewById(R.id.toolbar)
         chipGroup = findViewById(R.id.chipGroup)
         navController = findNavController(R.id.fragment_container)

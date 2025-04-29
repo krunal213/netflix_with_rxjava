@@ -5,6 +5,8 @@
     android:id="@+id/nav_graph_netflix"
     app:startDestination="@id/fragmentHome">
 
+
+
     <fragment
         android:id="@+id/fragmentHome"
         android:name="com.app.main.fragment.HomeFragment"

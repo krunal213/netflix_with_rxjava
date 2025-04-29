@@ -20,8 +20,13 @@ class SplashActivity : AppCompatActivity(), Animator.AnimatorListener {
     }
 
     override fun onAnimationEnd(p0: Animator) {
+        val isUserLogin = true
         startActivity(Intent().apply {
-            setClassName(this@SplashActivity, "com.app.getstarted.activity.GetStartedActivity")
+            setClassName(
+                this@SplashActivity,
+                if (isUserLogin) "com.app.whoiswatching.WhoIsWatchingActivity"
+                else "com.app.getstarted.activity.GetStartedActivity"
+            )
         })
         finish()
     }

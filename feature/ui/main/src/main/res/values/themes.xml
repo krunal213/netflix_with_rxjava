@@ -4,7 +4,7 @@
         <item name="bottomNavigationStyle">@style/Theme.NetflixWithRxJava.BottomNavigationView.Colored</item>
         <item name="colorPrimary">@android:color/transparent</item>
         <item name="toolbarStyle">@style/Widget.App.Toolbar</item>
-        <item name="appBarLayoutStyle">@style/Widget.MaterialComponents.AppBarLayout.Primary1</item>
+        <item name="appBarLayoutStyle">@style/Theme.NetflixWithRxJava.AppBarLayout.Primary</item>
     </style>
 
     <style name="Theme.NetflixWithRxJava.BottomNavigationView.InActive.Item.Caption" parent="@style/TextAppearance.AppCompat.Caption">
@@ -41,11 +41,9 @@
         <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
 
-
     <style name="Theme.NetflixWithRxJava.BottomNavigationView" parent="">
-        <item name="android:background">#121212</item>
+        <item name="android:background">#111111</item>
     </style>
-
 
     <style name="Widget.App.Toolbar" parent="Widget.MaterialComponents.Toolbar.Primary">
         <item name="materialThemeOverlay">@style/ThemeOverlay.App.Toolbar</item>
@@ -55,10 +53,8 @@
         <item name="colorOnPrimary">@android:color/white</item>
     </style>
 
-    <style name="Widget.MaterialComponents.AppBarLayout.Primary1" parent="Widget.MaterialComponents.AppBarLayout.Primary">
+    <style name="Theme.NetflixWithRxJava.AppBarLayout.Primary" parent="Widget.MaterialComponents.AppBarLayout.Primary">
         <item name="android:background">@android:color/transparent</item>
     </style>
-
-
 
 </resources>
