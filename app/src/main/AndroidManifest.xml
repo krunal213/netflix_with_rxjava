@@ -18,6 +18,7 @@
         <activity
             android:name="com.app.splash.activity.SplashActivity"
             android:exported="true"
+            android:theme="@style/Theme.NetflixWithRxJava.Splash"
             android:windowSoftInputMode="stateAlwaysVisible">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

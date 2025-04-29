@@ -63,6 +63,7 @@ dependencies {
     implementation(project(":feature:ui:main"))
     implementation(project(":feature:ui:search"))
     implementation(project(":feature:ui:settings"))
+    implementation(project(":feature:ui:whoiswatching"))
 
     implementation(project(":android_resource"))
 

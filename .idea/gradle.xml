@@ -20,6 +20,7 @@
             <option value="$PROJECT_DIR$/feature/ui/search" />
             <option value="$PROJECT_DIR$/feature/ui/settings" />
             <option value="$PROJECT_DIR$/feature/ui/splash" />
+            <option value="$PROJECT_DIR$/feature/ui/whoiswatching" />
           </set>
         </option>
         <option name="resolveExternalAnnotations" value="false" />
