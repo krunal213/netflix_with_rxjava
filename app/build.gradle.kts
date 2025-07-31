@@ -57,14 +57,13 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
-    implementation(project(":feature:ui:splash"))
-    implementation(project(":feature:ui:getstarted"))
-    implementation(project(":feature:ui:help"))
-    implementation(project(":feature:ui:main"))
-    implementation(project(":feature:ui:search"))
-    implementation(project(":feature:ui:settings"))
-    implementation(project(":feature:ui:whoiswatching"))
-
-    implementation(project(":android_resource"))
+    implementation(project(":ui:splash"))
+    implementation(project(":ui:getstarted"))
+    implementation(project(":ui:help"))
+    implementation(project(":ui:main"))
+    implementation(project(":ui:search"))
+    implementation(project(":ui:settings"))
+    implementation(project(":ui:whoiswatching"))
+    implementation(project(":common"))
 
 }
