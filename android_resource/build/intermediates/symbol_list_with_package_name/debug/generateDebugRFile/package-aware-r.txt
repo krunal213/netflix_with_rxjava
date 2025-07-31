@@ -1,5 +1,0 @@
-com.app.android_resource
-anim pop_slide_from_left
-anim slide_from_right
-font netflix_sans_regular
-style Theme_NetflixWithRxJava

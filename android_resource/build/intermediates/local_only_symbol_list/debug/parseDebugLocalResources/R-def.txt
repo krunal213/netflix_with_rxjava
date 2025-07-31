@@ -1,6 +1,0 @@
-R_DEF: Internal format may change without notice
-local
-anim pop_slide_from_left
-anim slide_from_right
-font netflix_sans_regular
-style Theme.NetflixWithRxJava

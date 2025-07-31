@@ -1,4 +1,0 @@
-int anim pop_slide_from_left 0x0
-int anim slide_from_right 0x0
-int font netflix_sans_regular 0x0
-int style Theme_NetflixWithRxJava 0x0
