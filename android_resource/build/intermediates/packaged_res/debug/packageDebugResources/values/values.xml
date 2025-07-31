@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="http://schemas.android.com/tools">
+    <style name="Theme.NetflixWithRxJava" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="fontFamily">@font/netflix_sans_regular</item>
+        <item name="colorPrimary">@android:color/black</item>
+        <item name="android:colorControlNormal">@android:color/white</item>
+        <item name="colorOnPrimary">@android:color/white</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/black</item>
+        <item name="android:forceDarkAllowed" ns1:targetApi="q">false</item>
+    </style>
+</resources>
