@@ -10,17 +10,32 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/android_resource" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/feature" />
-            <option value="$PROJECT_DIR$/feature/ui" />
-            <option value="$PROJECT_DIR$/feature/ui/getstarted" />
-            <option value="$PROJECT_DIR$/feature/ui/help" />
-            <option value="$PROJECT_DIR$/feature/ui/main" />
-            <option value="$PROJECT_DIR$/feature/ui/search" />
-            <option value="$PROJECT_DIR$/feature/ui/settings" />
-            <option value="$PROJECT_DIR$/feature/ui/splash" />
-            <option value="$PROJECT_DIR$/feature/ui/whoiswatching" />
+            <option value="$PROJECT_DIR$/common" />
+            <option value="$PROJECT_DIR$/data" />
+            <option value="$PROJECT_DIR$/data/getstarted" />
+            <option value="$PROJECT_DIR$/data/help" />
+            <option value="$PROJECT_DIR$/data/main" />
+            <option value="$PROJECT_DIR$/data/search" />
+            <option value="$PROJECT_DIR$/data/settings" />
+            <option value="$PROJECT_DIR$/data/splash" />
+            <option value="$PROJECT_DIR$/data/whoiswatching" />
+            <option value="$PROJECT_DIR$/domain" />
+            <option value="$PROJECT_DIR$/domain/getstarted" />
+            <option value="$PROJECT_DIR$/domain/help" />
+            <option value="$PROJECT_DIR$/domain/main" />
+            <option value="$PROJECT_DIR$/domain/search" />
+            <option value="$PROJECT_DIR$/domain/settings" />
+            <option value="$PROJECT_DIR$/domain/splash" />
+            <option value="$PROJECT_DIR$/domain/whoiswatching" />
+            <option value="$PROJECT_DIR$/ui" />
+            <option value="$PROJECT_DIR$/ui/getstarted" />
+            <option value="$PROJECT_DIR$/ui/help" />
+            <option value="$PROJECT_DIR$/ui/main" />
+            <option value="$PROJECT_DIR$/ui/search" />
+            <option value="$PROJECT_DIR$/ui/settings" />
+            <option value="$PROJECT_DIR$/ui/splash" />
+            <option value="$PROJECT_DIR$/ui/whoiswatching" />
           </set>
         </option>
         <option name="resolveExternalAnnotations" value="false" />
