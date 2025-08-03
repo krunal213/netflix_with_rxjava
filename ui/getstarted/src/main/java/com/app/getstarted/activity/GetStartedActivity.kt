@@ -2,7 +2,6 @@ package com.app.getstarted.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.app.AppCompatDelegate
 import androidx.appcompat.widget.Toolbar
 import androidx.navigation.NavController
 import androidx.navigation.NavDestination
@@ -31,6 +30,7 @@ class GetStartedActivity : AppCompatActivity(), NavController.OnDestinationChang
         NavigationUI.setupWithNavController(toolbar, navController, appBarConfiguration)
         setSupportActionBar(toolbar)
         navController.addOnDestinationChangedListener(this)
+
     }
 
     override fun onSupportNavigateUp(): Boolean {

@@ -5,7 +5,6 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name=".NetflixApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -14,7 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NetflixWithRxJava"
-        tools:targetApi="31">
+        tools:targetApi="31"
+        android:name="com.app.common.NetflixApplication">
         <activity
             android:name="com.app.splash.activity.SplashActivity"
             android:exported="true"

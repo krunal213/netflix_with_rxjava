@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    alias(libs.plugins.kapt)
 }
 
 android {
@@ -48,5 +49,18 @@ dependencies {
 
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    implementation(project(":domain:getstarted"))
     implementation(project(":common"))
+
+    implementation(libs.rxjava)
+    implementation(libs.rxandroid)
+
+    implementation(libs.dagger)
+    kapt(libs.dagger.compiler)
+
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.google.firebase.auth)
+
+
 }

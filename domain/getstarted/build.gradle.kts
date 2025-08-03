@@ -44,4 +44,10 @@ dependencies {
 
     implementation(libs.dagger)
     kapt(libs.dagger.compiler)
+
+    implementation(libs.rxjava)
+    implementation(libs.rxandroid)
+
+    //for accessing the data module related dependencies for dagger2
+    api(project(":data:getstarted"))
 }

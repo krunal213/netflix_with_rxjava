@@ -23,7 +23,6 @@ dependencyResolutionManagement {
 
 rootProject.name = "NetflixWithRxJava"
 include(":app")
-include(":common")
 include(":ui:main")
 include(":ui:settings")
 include(":ui:getstarted")
@@ -45,3 +44,4 @@ include(":data:search")
 include(":data:settings")
 include(":data:splash")
 include(":data:whoiswatching")
+include(":common")

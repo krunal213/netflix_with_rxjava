@@ -2,7 +2,7 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
     alias(libs.plugins.kapt)
-    //alias(libs.plugins.navigationSafeargsKotlin)
+    alias(libs.plugins.google.services)
 }
 
 android {
@@ -45,13 +45,13 @@ android {
 dependencies {
 
     implementation(libs.dagger)
-    implementation(libs.room.runtime)
+    /*implementation(libs.room.runtime)
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
-    implementation(libs.glide)
+    implementation(libs.glide)*/
 
     kapt(libs.dagger.compiler)
-    kapt(libs.room.compiler)
+    //kapt(libs.room.compiler)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
@@ -64,6 +64,7 @@ dependencies {
     implementation(project(":ui:search"))
     implementation(project(":ui:settings"))
     implementation(project(":ui:whoiswatching"))
+
     implementation(project(":common"))
 
 }

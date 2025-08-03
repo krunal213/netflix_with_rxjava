@@ -20,7 +20,7 @@ class SplashActivity : AppCompatActivity(), Animator.AnimatorListener {
     }
 
     override fun onAnimationEnd(p0: Animator) {
-        val isUserLogin = true
+        val isUserLogin = false
         startActivity(Intent().apply {
             setClassName(
                 this@SplashActivity,
