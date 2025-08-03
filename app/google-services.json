@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "168990660386",
+    "project_id": "netflix-7058e",
+    "storage_bucket": "netflix-7058e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:168990660386:android:af01ddaf2dc9f2baa9377b",
+        "android_client_info": {
+          "package_name": "com.app.netflixwithrxjava"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2Zrvh9WtNHoRba1HwmnKn274WL7ZYB5g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

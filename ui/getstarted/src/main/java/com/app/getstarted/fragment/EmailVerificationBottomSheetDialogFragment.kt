@@ -1,6 +1,7 @@
 package com.app.getstarted.fragment
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,6 +15,17 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.textfield.TextInputLayout
+//import com.google.firebase.FirebaseApp
+//import com.google.firebase.auth.ActionCodeSettings
+//import com.google.firebase.Firebase
+//import com.google.firebase.FirebaseApp
+//import com.google.firebase.auth.FirebaseAuth
+//import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
+//import com.google.firebase.auth.FirebaseAuthInvalidUserException
+
+//import com.google.firebase.auth.auth
+
+//import com.google.firebase.auth.auth
 
 class EmailVerificationBottomSheetDialogFragment : BottomSheetDialogFragment(),
     View.OnClickListener {
@@ -75,6 +87,53 @@ class EmailVerificationBottomSheetDialogFragment : BottomSheetDialogFragment(),
     override fun onClick(p0: View?) {
         when (p0?.id) {
             R.id.button_get_started -> {
+                /*val actionCodeSettings = ActionCodeSettings.newBuilder()
+                    .setHandleCodeInApp(true)
+                    .setUrl("https://netflixwithrxjava.page.link/email-link-login")
+                    .setAndroidPackageName("com.app.netflixwithrxjava", true, null)
+                    .build()
+
+                FirebaseAuth
+                    .getInstance()
+                    .sendSignInLinkToEmail("krunalmkathikar1993@gmail.com", actionCodeSettings)
+                    .addOnCompleteListener { task ->
+                        if (!task.isSuccessful) {
+                            when (val exception = task.exception) {
+                                is FirebaseAuthInvalidUserException -> {
+                                    // ✅ Email not registered
+                                    Log.d("CheckUser", "User does NOT exist")
+                                }
+                                is FirebaseAuthInvalidCredentialsException -> {
+                                    // ✅ Email exists but password is wrong
+                                    Log.d("CheckUser", "User exists")
+                                }
+                                else -> {
+                                    Log.e("CheckUser", "Error checking user", exception)
+                                }
+                            }
+                        }
+                    }
+
+
+                FirebaseAuth.getInstance()
+                    .signInWithEmailAndPassword("krunalmkathikar1993@gmail.com", "*")
+                    .addOnCompleteListener { task ->
+                        if (!task.isSuccessful) {
+                            when (val exception = task.exception) {
+                                is FirebaseAuthInvalidUserException -> {
+                                    // ✅ Email not registered
+                                    Log.d("CheckUser", "User does NOT exist")
+                                }
+                                is FirebaseAuthInvalidCredentialsException -> {
+                                    // ✅ Email exists but password is wrong
+                                    Log.d("CheckUser", "User exists")
+                                }
+                                else -> {
+                                    Log.e("CheckUser", "Error checking user", exception)
+                                }
+                            }
+                        }
+                    }*/
                 findNavController().navigate(R.id.action_loginFragment)
             }
         }

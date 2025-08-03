@@ -18,9 +18,15 @@ glide = "4.16.0"
 preferenceKtx = "1.2.0"
 expandablelayout = "2.9.2"
 viewpagerindicator = "2.0"
+firebase-bom = "32.7.3"
+google-services = "4.4.3"
+rxjava = "3.1.5"
+rxandroid = "3.0.2"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+firebase-auth = { module = "com.google.firebase:firebase-auth" }
+google-firebase-auth = { module = "com.google.firebase:firebase-auth" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -41,6 +47,10 @@ glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "gl
 preference-ktx = { group = "androidx.preference", name = "preference-ktx", version.ref = "preferenceKtx" }
 expandablelayout = { module = "com.github.cachapa:ExpandableLayout", version.ref = "expandablelayout" }
 viewpagerindicator = { module = "it.xabaras.android:viewpagerindicator", version.ref = "viewpagerindicator" }
+firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebase-bom" }
+rxjava = { module = "io.reactivex.rxjava3:rxjava", version.ref = "rxjava" }
+rxandroid = { module = "io.reactivex.rxjava3:rxandroid", version.ref = "rxandroid" }
+
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
@@ -48,6 +58,7 @@ jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "k
 kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
 navigationSafeargsKotlin = { id = "androidx.navigation.safeargs.kotlin", version.ref = "navigation" }
 androidLibrary = { id = "com.android.library", version.ref = "agp" }
+google-services = { id = "com.google.gms.google-services", version.ref = "google-services" }
 
 
 
