@@ -13,14 +13,17 @@ class AuthenticationFirebaseDataSourceImpl @Inject constructor(val firebaseAuth:
         return Single.create { emitter ->
             firebaseAuth
                 .signInWithEmailAndPassword(email, password)
-                .addOnSuccessListener { result ->
-                    if (!emitter.isDisposed) {
-                        emitter.onSuccess(Unit)
-                    }
-                }
-                .addOnFailureListener { exception ->
-                    if (!emitter.isDisposed) {
-                        emitter.onError(exception)
+                .addOnCompleteListener {
+                    if (it.isSuccessful) {
+                        if (!emitter.isDisposed) {
+                            emitter.onSuccess(Unit)
+                        }
+                    } else {
+                        if (!emitter.isDisposed) {
+                            it.exception?.let {
+                                exception -> emitter.onError(exception)
+                            }
+                        }
                     }
                 }
         }
@@ -28,7 +31,7 @@ class AuthenticationFirebaseDataSourceImpl @Inject constructor(val firebaseAuth:
 
     override fun isUserLogin(): Single<Unit> {
         return Single.create { emitter ->
-            if (firebaseAuth.currentUser == null) {
+            if (firebaseAuth.currentUser != null) {
                 if (!emitter.isDisposed) {
                     emitter.onSuccess(Unit)
                 }

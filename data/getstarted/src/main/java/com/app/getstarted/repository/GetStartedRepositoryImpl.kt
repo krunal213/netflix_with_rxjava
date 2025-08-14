@@ -11,5 +11,4 @@ class GetStartedRepositoryImpl @Inject constructor(val authenticationFirebaseDat
         return authenticationFirebaseDataSource.login(email, password)
     }
 
-
 }
